@@ -1,0 +1,120 @@
+@font-face {
+  font-family: "CeraPro-Thin";
+  src: url('CeraPro-TypeMates/Webfonts/Cera-Pro-Thin.eot');
+  src: url('CeraPro-TypeMates/Webfonts/Cera-Pro-Thin.eot?#iefix') format('embedded-opentype'),
+    url('CeraPro-TypeMates/Webfonts/Cera-Pro-Thin.woff2') format('woff2'),
+    url('CeraPro-TypeMates/Webfonts/Cera-Pro-Thin.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CeraPro-Thin";
+  src: url('CeraPro-TypeMates/Webfonts/Cera-Pro-Thin-Italic.eot');
+  src: url('CeraPro-TypeMates/Webfonts/Cera-Pro-Thin-Italic.eot?#iefix') format('embedded-opentype'),
+    url('CeraPro-TypeMates/Webfonts/Cera-Pro-Thin-Italic.woff2') format('woff2'),
+    url('CeraPro-TypeMates/Webfonts/Cera-Pro-Thin-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "CeraPro-Light";
+  src: url('CeraPro-TypeMates/Webfonts/Cera-Pro-Light.eot');
+  src: url('CeraPro-TypeMates/Webfonts/Cera-Pro-Light.eot?#iefix') format('embedded-opentype'),
+    url('CeraPro-TypeMates/Webfonts/Cera-Pro-Light.woff2') format('woff2'),
+    url('CeraPro-TypeMates/Webfonts/Cera-Pro-Light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CeraPro-Light";
+  src: url('CeraPro-TypeMates/Webfonts/Cera-Pro-Light-Italic.eot');
+  src: url('CeraPro-TypeMates/Webfonts/Cera-Pro-Light-Italic.eot?#iefix') format('embedded-opentype'),
+    url('CeraPro-TypeMates/Webfonts/Cera-Pro-Light-Italic.woff2') format('woff2'),
+    url('CeraPro-TypeMates/Webfonts/Cera-Pro-Light-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "CeraPro-Regular";
+  src: url('CeraPro-TypeMates/Webfonts/Cera-Pro-Regular.eot');
+  src: url('CeraPro-TypeMates/Webfonts/Cera-Pro-Regular.eot?#iefix') format('embedded-opentype'),
+    url('CeraPro-TypeMates/Webfonts/Cera-Pro-Regular.woff2') format('woff2'),
+    url('CeraPro-TypeMates/Webfonts/Cera-Pro-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CeraPro-Regular";
+  src: url('CeraPro-TypeMates/Webfonts/Cera-Pro-Regular-Italic.eot');
+  src: url('CeraPro-TypeMates/Webfonts/Cera-Pro-Regular-Italic.eot?#iefix') format('embedded-opentype'),
+    url('CeraPro-TypeMates/Webfonts/Cera-Pro-Regular-Italic.woff2') format('woff2'),
+    url('CeraPro-TypeMates/Webfonts/Cera-Pro-Regular-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "CeraPro-Medium";
+  src: url('CeraPro-TypeMates/Webfonts/Cera-Pro-Medium.eot');
+  src: url('CeraPro-TypeMates/Webfonts/Cera-Pro-Medium.eot?#iefix') format('embedded-opentype'),
+    url('CeraPro-TypeMates/Webfonts/Cera-Pro-Medium.woff2') format('woff2'),
+    url('CeraPro-TypeMates/Webfonts/Cera-Pro-Medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CeraPro-Medium";
+  src: url('CeraPro-TypeMates/Webfonts/Cera-Pro-Medium-Italic.eot');
+  src: url('CeraPro-TypeMates/Webfonts/Cera-Pro-Medium-Italic.eot?#iefix') format('embedded-opentype'),
+    url('CeraPro-TypeMates/Webfonts/Cera-Pro-Medium-Italic.woff2') format('woff2'),
+    url('CeraPro-TypeMates/Webfonts/Cera-Pro-Medium-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "CeraPro-Bold";
+  src: url('CeraPro-TypeMates/Webfonts/Cera-Pro-Bold.eot');
+  src: url('CeraPro-TypeMates/Webfonts/Cera-Pro-Bold.eot?#iefix') format('embedded-opentype'),
+    url('CeraPro-TypeMates/Webfonts/Cera-Pro-Bold.woff2') format('woff2'),
+    url('CeraPro-TypeMates/Webfonts/Cera-Pro-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CeraPro-Bold";
+  src: url('CeraPro-TypeMates/Webfonts/Cera-Pro-Bold-Italic.eot');
+  src: url('CeraPro-TypeMates/Webfonts/Cera-Pro-Bold-Italic.eot?#iefix') format('embedded-opentype'),
+    url('CeraPro-TypeMates/Webfonts/Cera-Pro-Bold-Italic.woff2') format('woff2'),
+    url('CeraPro-TypeMates/Webfonts/Cera-Pro-Bold-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "CeraPro-Black";
+  src: url('CeraPro-TypeMates/Webfonts/Cera-Pro-Black.eot');
+  src: url('CeraPro-TypeMates/Webfonts/Cera-Pro-Black.eot?#iefix') format('embedded-opentype'),
+    url('CeraPro-TypeMates/Webfonts/Cera-Pro-Black.woff2') format('woff2'),
+    url('CeraPro-TypeMates/Webfonts/Cera-Pro-Black.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CeraPro-Black";
+  src: url('CeraPro-TypeMates/Webfonts/Cera-Pro-Black-Italic.eot');
+  src: url('CeraPro-TypeMates/Webfonts/Cera-Pro-Black-Italic.eot?#iefix') format('embedded-opentype'),
+    url('CeraPro-TypeMates/Webfonts/Cera-Pro-Black-Italic.woff2') format('woff2'),
+    url('CeraPro-TypeMates/Webfonts/Cera-Pro-Black-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
