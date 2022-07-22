@@ -44,7 +44,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getExcelData() {
-    this._api.getTypeRequest('excel/records?id=0').subscribe((res: any) => {    
+    this._api.getTypeRequest('excel/records?id=1').subscribe((res: any) => {    
 
       this._api.getTypeRequest('excel/headerscontent').subscribe((resu: any) => {    
       
@@ -89,6 +89,7 @@ export class DashboardComponent implements OnInit {
           desription: re.description,
           descriptiondetails: re.descriptiondetails,
           istemplateordeployment: re.istemplateordeployment,
+          activedeliverales: re.activedeliverales,
           responsibleteam: re.responsibleteam
         })
       } else {
@@ -101,6 +102,7 @@ export class DashboardComponent implements OnInit {
             desription: re.description,
             descriptiondetails: re.descriptiondetails,
             istemplateordeployment: re.istemplateordeployment,
+            activedeliverales: re.activedeliverales,
             responsibleteam: re.responsibleteam
           })
           

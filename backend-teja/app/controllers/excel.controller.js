@@ -69,7 +69,7 @@ const getTutorials = (req, res) => {
   Tutorial.findAll({
     raw: true,
     where: {
-      userid: 1
+      userid: 0
     }})
     .then((data) => {
       res.send(data);
