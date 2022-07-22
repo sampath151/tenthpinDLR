@@ -6,50 +6,13 @@ import {FlatTreeControl} from '@angular/cdk/tree';
 import {MatTreeFlatDataSource, MatTreeFlattener} from '@angular/material/tree';
 
 
-// export class DashboardComponent implements OnInit {
-
-//   constructor() { }
-
-//   ngOnInit(): void {
-    
-
-//   }
-
-// }
-
-
-
 interface FoodNode {
   name: string;
   children?: FoodNode[];
 }
 
 
-
-
-
-
-const TREE_DATA: FoodNode[] = [
-  {
-    name: 'Phases',
-    children: [{name: 'Display'}, {name: 'Discover'}, {name: 'Explore'}, {name: 'Prepare'}, {name: 'Prepare soft Launch '}, {name: 'Blank'}],
-  },
-  {
-    name: 'Workstreem',
-    children: [{name: 'Architecture'}, {name: 'Change Management & Training'}, {name: 'MDM'}, {name: 'Project Management'}, {name: 'Security & Authorization'}, {name: 'Solution Design & Build'}, {name: 'Testing'}],
-  },
-  {
-    name: 'Product',
-    children: [{name: 'SAP S/4HANA Cloud'}],
-  },
-  
-  {
-    name: 'More',
-    
-    
-    children: [{name: 'System Conversion'},{name: 'New Implementation'},{name: 'Selective Data Transition'}],
-  },
-];
+const TREE_DATA: any = [];
 
 /** Flat node with expandable and level information */
 interface ExampleFlatNode {
@@ -71,34 +34,83 @@ interface ExampleFlatNode {
 
 export class DashboardComponent implements OnInit {
 
- 
-
-  
-
   ngOnInit() {
     if(!localStorage.getItem('authtoken')) {
       this.router.navigate(['/']);
     }
 
     this.getExcelData();
+    
   }
 
   getExcelData() {
-    this._api.getTypeRequest('excel/records?id=1').subscribe((res: any) => {
-      // this.dataSource = res;
-    
-      // let u = [];
-      // for(let user of res) {
-      //   u.push({
-      //     value: user.id, viewValue: user.full_name
-      //   })
-      // }
-      console.log(res);
-    
-      // this.userData = u;
+    this._api.getTypeRequest('excel/records?id=0').subscribe((res: any) => {    
 
+      this._api.getTypeRequest('excel/headerscontent').subscribe((resu: any) => {    
+      
+        let i = 0;
+        let x : FoodNode[]= [];
+        for(let re of resu) {
+          
+          if(i !== 0  && x[i-1].name.indexOf(re.headername) !== -1) {
+            x[i-1].children?.push({
+              name: re.headersubname
+            })
+          } else {
+            x.push({
+              name: re.headername,
+              children: []
+            })
+            x[i].children?.push({
+              name: re.headersubname
+            })
+            
+            i++;  
+          }
+        }
+        
+        
+        
+        this.dataSource.data = x;
+      });
+      this.excelresult = res;
+      this.exceldataSource = this.processExcelData(res);
+      // this.exceldataSource = res;
+      console.log( this.exceldataSource);
     });
   }
+
+  processExcelData(result: any) {
+    let i = 0;
+    let finalres: any[] = [];
+    for(let re of result) {
+      if(i !== 0  && finalres[i-1].name.indexOf(re.phase) !== -1) {
+        finalres[i-1].children?.push({
+          desription: re.description,
+          descriptiondetails: re.descriptiondetails,
+          istemplateordeployment: re.istemplateordeployment,
+          responsibleteam: re.responsibleteam
+        })
+      } else {
+        if(re.phase) {
+          finalres.push({
+            name: re.phase,
+            children: []
+          })
+          finalres[i].children?.push({
+            desription: re.description,
+            descriptiondetails: re.descriptiondetails,
+            istemplateordeployment: re.istemplateordeployment,
+            responsibleteam: re.responsibleteam
+          })
+          
+          i++; 
+        } 
+      }
+    }
+
+    return finalres;
+  };
 
   name = 'Angular';
   myArray: any[] = [
@@ -125,15 +137,14 @@ export class DashboardComponent implements OnInit {
   isShown: boolean = false ; // hidden by default
 
 
-toggleShow() {
+  toggleShow() {
 
-this.isShown = ! this.isShown;
+    this.isShown = ! this.isShown;
 
-
-}
+  }
 
   title = 'TRV';
-  private _transformer = (node: FoodNode, level: number) => {
+  private _transformer = (node: any, level: number) => {
     return {
       expandable: !!node.children && node.children.length > 0,
       name: node.name,
@@ -154,11 +165,13 @@ this.isShown = ! this.isShown;
   );
 
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
-
+  exceldataSource: any[] = [];
+  excelresult: any[] = [];
   constructor(
     private _api: ApiService,
     private router: Router) {
     this.dataSource.data = TREE_DATA;
+    // this.exceldataSource = [];
   }
 
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
@@ -169,6 +182,14 @@ this.isShown = ! this.isShown;
     localStorage.removeItem('authtoken');
     localStorage.removeItem('usertype');
     this.router.navigate(['/']);
+  }
+
+  showOptions(event: any) {
+    if(event.checked) {
+      
+    } else {
+
+    }
   }
 
 }

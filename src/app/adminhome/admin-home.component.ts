@@ -81,13 +81,7 @@ export class AdminHomeComponent implements OnInit {
     // this.form ;
   }
 
-  // openDialog() {
-  //   const dialogRef = this.dialog.open(DialogContentExampleDialog);
 
-  //   dialogRef.afterClosed().subscribe(result => {
-  //     console.log(`Dialog result: ${result}`);
-  //   });
-  // }
 
   displayedColumns: string[] = ['full_name', 'email', 'mobile'];
 

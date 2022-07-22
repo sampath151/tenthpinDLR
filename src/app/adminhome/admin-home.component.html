@@ -47,41 +47,30 @@
                 <div class="row">
 
                     
-                  <div class="col-md-12">
+                  <div class="col-md-2">
                     <form [formGroup]="options" (ngSubmit)="onOptionSubmit()">
-                    <div class="row">
-                      <div class="col-md-2">
+                      <div class="example-container">
                         <mat-form-field  appearance="fill">
                           <mat-label>Enter name</mat-label>
                           <input matInput #input placeholder="Ex. Nougat"  id="name" formControlName="name"> 
                         </mat-form-field>
-                      </div>
-                      <div class="col-md-2">
-                        
+                      
                         <mat-form-field  appearance="fill">
                           <mat-label>Enter email ID</mat-label>
                           <input matInput #input placeholder="Ex. test@test.com" id="email" formControlName="email">
                         </mat-form-field>
 
-                      </div>
-                      <div class="col-md-2">
                         <mat-form-field  appearance="fill">
                           <mat-label>Enter password</mat-label>
                           <input matInput #input placeholder="" id="password" formControlName="password">
                         </mat-form-field>
-                      </div>
-                      <div class="col-md-2">
+
                         <mat-form-field  appearance="fill">
                           <mat-label>Enter mobile</mat-label>
                           <input matInput #input placeholder="Ex. 9999999999" id="mobile" formControlName="mobile">
                         </mat-form-field>
                       </div>
-                      <div class="col-md-2">
-                        <input type="submit" value="Add New" class="btn btn-block btn-primary" >
-                      </div>
-                      
-                    </div>
-                    
+                      <input type="submit" value="Add New" class="btn btn-block btn-primary" >
                     </form>
 
                       

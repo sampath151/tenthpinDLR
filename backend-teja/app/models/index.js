@@ -25,5 +25,6 @@ db.sequelize = sequelize;
 
 db.tutorials = require("./client.model.js")(sequelize, Sequelize);
 db.excel = require("./excel.model.js")(sequelize, Sequelize);
+db.headercontent = require("./headercontent.model.js")(sequelize, Sequelize);
 
 module.exports = db;

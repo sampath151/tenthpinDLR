@@ -1,5 +1,6 @@
 const db = require("../models");
 const Tutorial = db.excel;
+const TutorialHeaders = db.headercontent;
 const readXlsxFile = require("read-excel-file/node");
 const moment = require("moment");
 
@@ -65,7 +66,11 @@ const upload = async (req, res) => {
   }
 };
 const getTutorials = (req, res) => {
-  Tutorial.findAll()
+  Tutorial.findAll({
+    raw: true,
+    where: {
+      userid: 1
+    }})
     .then((data) => {
       res.send(data);
     })
@@ -76,7 +81,25 @@ const getTutorials = (req, res) => {
       });
     });
 };
+
+
+const getTutorialHeaders = (req, res) => {
+  TutorialHeaders.findAll({
+    raw: true
+  })
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving tutorials.",
+      });
+    });
+};
+
 module.exports = {
   upload,
   getTutorials,
+  getTutorialHeaders
 };
