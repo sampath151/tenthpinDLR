@@ -169,7 +169,6 @@ export class DashboardComponent implements OnInit {
   dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
   exceldataSource: any[] = [];
   excelresult: any[] = [];
-  checkboxselection: any[] = [];
   constructor(
     private _api: ApiService,
     private router: Router) {
@@ -188,64 +187,12 @@ export class DashboardComponent implements OnInit {
   }
 
   showOptions(event: any) {
-    
     if(event.checked) {
-      this.checkboxselection.push(event.source.value.trim());
+      
     } else {
-      const index = this.checkboxselection.indexOf(event.source.value.trim());
-      if (index > -1) { // only splice array when item is found
-        this.checkboxselection.splice(index, 1); // 2nd parameter means remove one item only
-      }
-    }
-    console.log(this.checkboxselection);
-    if(this.checkboxselection.length > 0) {
-      this.exceldataSource = this.processCheckboxResult(this.excelresult, this.checkboxselection);
-    } else {
-      this.exceldataSource = this.processExcelData(this.excelresult);
-    }
-    
-    
 
+    }
   }
-  processCheckboxResult(result: any[], checkOptions: any[]) {
-    let i = 0;
-    let finalres: any[] = [];
-    for(let re of result) {
-      console.log(checkOptions.length, re.phase);
-      if(checkOptions.length > 0 && checkOptions.includes(re.phase)){
-        if(i !== 0  && finalres[i-1].name.indexOf(re.phase) !== -1) {
-          finalres[i-1].children?.push({
-            desription: re.description,
-            descriptiondetails: re.descriptiondetails,
-            istemplateordeployment: re.istemplateordeployment,
-            activedeliverales: re.activedeliverales,
-            responsibleteam: re.responsibleteam
-          })
-        } else {
-          if(re.phase) {
-            finalres.push({
-              name: re.phase,
-              children: []
-            })
-            finalres[i].children?.push({
-              desription: re.description,
-              descriptiondetails: re.descriptiondetails,
-              istemplateordeployment: re.istemplateordeployment,
-              activedeliverales: re.activedeliverales,
-              responsibleteam: re.responsibleteam
-            })
-            
-            i++; 
-          } 
-        }
-      } else {
-        // finalres = this.processExcelData(result);
-      }
-    }
-
-    return finalres;
-  }
-
 
 }
 
